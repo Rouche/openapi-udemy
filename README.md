@@ -7,6 +7,9 @@ https://learnxinyminutes.com/docs/yaml/
 
 https://swagger.io/tools/swaggerhub/
 
+This project have been recorded to:
+https://app.swaggerhub.com/apis/KitFox/openapicourse/1.0
+
 ### OpenAPI Spec
 
 https://github.com/OAI/OpenAPI-Specification

@@ -41,7 +41,7 @@ paths:
                       minLength: 2
                       maxLength: 100
                     lastNamne:
-                      type: stirng
+                      type: string
                       minLength: 2
                       maxLength: 100
                       example: Fuck!
@@ -53,6 +53,18 @@ paths:
                         city:
                           type: string
                           example: Zomg!
+                        stateCode:
+                          type: string
+                          maxLength: 2
+                          minLength: 2
+                          description: 2 letter state code
+                          # enum: [AL, SK, NY, AZ, FL]
+                          enum:
+                            - AL
+                            - SK
+                            - NY
+                            - AZ
+                            - FL
                         zipCode:
                           type: string
   /v1/beers:
