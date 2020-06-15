@@ -67,6 +67,7 @@ paths:
                             - FL
                         zipCode:
                           type: string
+                          example: 33701
   /v1/beers:
     get:
       responses:
@@ -79,9 +80,30 @@ paths:
                 minItems: 1
                 maxItems: 100
                 items:
-                  type: string
-                  description: Customer Name
-                  minLength: 2
-                  maxLength: 100
+                  type: object
+                  description: Beer Object
+                  properties:
+                    name:
+                      type: string
+                      description: Customer Name
+                      minLength: 2
+                      maxLength: 100
+                    style:
+                      type: string
+                      enum: [ALE, PALE_ALE, IPA, WHEAT, LAGER]
+                    price:
+                      type: number
+                      format: float
+                    quantityOnHand:
+                      type: integer
+                      format: int32
+                    brewery:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        location:
+                          type: string
+                    
         '404':
           description: Not found
