@@ -21,6 +21,8 @@ servers:
 paths:
   /v1/customers:
     get:
+      summary: List of Customers
+      description: Get the list of all Customers in the system in paged form
       parameters:
         - $ref: "#/components/parameters/PageNumberParam"
         - $ref: "#/components/parameters/PageSizeParam"
@@ -33,6 +35,8 @@ paths:
                 $ref: "#/components/schemas/CustomerPagedList"
   /v1/customers/{customerId}:
     get:
+      summary: Get Customer by ID
+      description: Get a **Customer** by its ID value.
       parameters:
         # ROUCHE_DOCS: This needs to be the same name of the squiggly string
         - name: customerId
@@ -52,6 +56,8 @@ paths:
 
   /v1/beers:
     get:
+      summary: List of Beers
+      description: Get the list of all Beers in the system in paged form
       parameters:
         - $ref: "#/components/parameters/PageNumberParam"
         - $ref: "#/components/parameters/PageSizeParam"
@@ -66,6 +72,8 @@ paths:
           description: No Beers Found
   /v1/beers/{beerId}:
     get:
+      summary: Get Beer by ID
+      description: Get a **Beer** by its ID value.
       parameters:
         - name: beerId
           in: path
