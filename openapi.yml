@@ -80,7 +80,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Customer"
+                $ref: "#/components/schemas/Beer"
 
 components:
   parameters:
