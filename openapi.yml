@@ -22,7 +22,7 @@ paths:
   /v1/customers:
     get:
       summary: List of Customers
-      description: Get the list of all Customers in the system in paged form
+      description: Get the list of all **Customers** in the system in paged form
       parameters:
         - $ref: "#/components/parameters/PageNumberParam"
         - $ref: "#/components/parameters/PageSizeParam"
@@ -57,7 +57,7 @@ paths:
   /v1/beers:
     get:
       summary: List of Beers
-      description: Get the list of all Beers in the system in paged form
+      description: Get the list of all **Beers** in the system in paged form
       parameters:
         - $ref: "#/components/parameters/PageNumberParam"
         - $ref: "#/components/parameters/PageSizeParam"
@@ -92,23 +92,23 @@ paths:
 
 components:
   parameters:
-      PageNumberParam:
-        name: pagenumber
-        in: query
-        description: Page number
-        schema:
-          type: integer
-          format: int32
-          default: 1
-      PageSizeParam:
-        name: pagesize
-        in: query
-        description: Page size
-        required: false
-        schema:
-          type: integer
-          format: int32
-          default: 25
+    PageNumberParam:
+      name: pagenumber
+      in: query
+      description: Page number
+      schema:
+        type: integer
+        format: int32
+        default: 1
+    PageSizeParam:
+      name: pagesize
+      in: query
+      description: Page size
+      required: false
+      schema:
+        type: integer
+        format: int32
+        default: 25
 
   schemas:
     Address:
