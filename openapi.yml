@@ -22,22 +22,22 @@ paths:
   /v1/customers:
     get:
       responses:
-        200:
+        "200":
           description: List of Customers
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CustomerList'
+                $ref: '#/components/schemas/CustomerPagedList'
   /v1/beers:
     get:
       responses:
-        200:
+        "200":
           description: List of Beers
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/BeerPagedList'
-        404:
+        "404":
           description: No Beers Found
 components:
   schemas:
@@ -84,12 +84,16 @@ components:
           $ref: '#/components/schemas/Address'
       description: customer object
     CustomerList:
-      maxItems: 100
-      minItems: 1
       type: array
-      description: List of Customers
       items:
         $ref: '#/components/schemas/Customer'
+    CustomerPagedList:
+      type: object
+      properties:
+        content:
+          $ref: '#/components/schemas/CustomerPagedList'
+      allOf:
+        - $ref: '#/components/schemas/PagedResponse'
     Brewery:
       type: object
       properties:
@@ -129,7 +133,8 @@ components:
         content:
           $ref: '#/components/schemas/BeerList'
       allOf:
-      - $ref: '#/components/schemas/PagedResponse'
+        - $ref: '#/components/schemas/PagedResponse'
+
     PagedResponse:
       type: object
       properties:
