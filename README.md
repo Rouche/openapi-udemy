@@ -21,3 +21,7 @@ https://json-schema.org/understanding-json-schema/index.html
 ### Schema
 
 https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.3.md#schemaObject
+
+### Parameters
+
+https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#parameterObject
