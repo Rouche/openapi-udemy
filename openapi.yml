@@ -184,7 +184,21 @@ paths:
               $ref: "#/components/schemas/Beer"
       responses:
         "204":
-          description: Beer updated
+          description: Beer Updated
+
+    delete:
+      summary: Delete Beer
+      description: Delete Beer resource by id.
+      tags:
+        - Beers
+      operationId: deleteBeerByIdV1
+      parameters:
+        - $ref: "#/components/parameters/BeerIdPathParam"
+      responses:
+        "200":
+          description: Beer Deleted
+        "404":
+          description: Beer not found
 
 components:
   parameters:
