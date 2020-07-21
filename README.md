@@ -26,3 +26,6 @@ https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.3.md#schem
 
 https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#parameterObject
 
+### Callbacks
+
+https://swagger.io/docs/specification/callbacks/
