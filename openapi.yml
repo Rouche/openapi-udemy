@@ -36,6 +36,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CustomerPagedList"
+
     post:
       summary: New Customer
       description: Create a new customer
@@ -66,14 +67,8 @@ paths:
         - Customers
       operationId: getCustomerByIdV1
       parameters:
-        # ROUCHE_DOCS: This needs to be the same name of the squiggly string
-        - name: customerId
-          in: path
-          description: Customer ID
-          required: true
-          schema:
-            type: string
-            format: uuid
+        # ROUCHE_DOCS: The param name needs to be the same name of the squiggly string
+        - $ref: "#/components/parameters/CustomerIdPathParam"
       responses:
         "200":
           description: Found customer
@@ -81,6 +76,31 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Customer"
+
+    put:
+      summary: Update Customer
+      description: Update Customer by id.
+      tags:
+        - Customers
+      operationId: updateCustomerByIdV1
+      parameters:
+        - $ref: "#/components/parameters/CustomerIdPathParam"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Customer"
+      responses:
+        "204":
+          description: Updated customer
+          headers:
+            Location:
+              description: Location of the updated customer
+              schema:
+                type: string
+                format: uri
+                example: http://example.com/v1/customers/{assignedIdValue}
 
   /v1/beers:
     get:
@@ -101,6 +121,7 @@ paths:
                 $ref: "#/components/schemas/BeerPagedList"
         "404":
           description: No Beers Found
+
     post:
       summary: New Beer
       description: Create a new beer
@@ -165,6 +186,14 @@ components:
         type: integer
         format: int32
         default: 25
+    CustomerIdPathParam:
+      name: customerId
+      in: path
+      description: Customer ID
+      required: true
+      schema:
+        type: string
+        format: uuid
 
   schemas:
     Address:
