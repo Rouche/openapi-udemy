@@ -50,6 +50,14 @@ paths:
       responses:
         "201":
           description: Created customer
+          headers:
+            # ROUCHE_DOCS:This takes a map of headers key.
+            Location:
+              description: Location of the created customer
+              schema:
+                type: string
+                format: uri
+                example: http://example.com/v1/customers/{assignedIdValue}
   /v1/customers/{customerId}:
     get:
       summary: Get Customer by ID
