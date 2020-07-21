@@ -175,6 +175,8 @@ components:
         id:
           type: string
           format: uuid
+          # ROUCHE_DOCS: This will remove the id in the post request
+          readOnly: true
         firstName:
           maxLength: 100
           minLength: 2
