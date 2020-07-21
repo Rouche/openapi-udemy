@@ -36,6 +36,20 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CustomerPagedList"
+    post:
+      summary: New Customer
+      description: Create a new customer
+      tags:
+        - Customers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Customer"
+      responses:
+        "201":
+          description: Created customer
   /v1/customers/{customerId}:
     get:
       summary: Get Customer by ID
@@ -44,7 +58,7 @@ paths:
         - Customers
       operationId: getCustomerByIdV1
       parameters:
-        # ROUCHE_DOCS: This needs to be the same name of the squiggly string in the path.
+        # ROUCHE_DOCS: This needs to be the same name of the squiggly string
         - name: customerId
           in: path
           description: Customer ID
