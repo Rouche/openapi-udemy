@@ -25,6 +25,7 @@ paths:
       description: Get the list of all **Customers** in the system in paged form
       tags:
         - Customers
+      operationId: listCustomersV1
       parameters:
         - $ref: "#/components/parameters/PageNumberParam"
         - $ref: "#/components/parameters/PageSizeParam"
@@ -41,8 +42,9 @@ paths:
       description: Get a **Customer** by its ID value.
       tags:
         - Customers
+      operationId: getCustomerByIdV1
       parameters:
-        # ROUCHE_DOCS: This needs to be the same name of the squiggly string
+        # ROUCHE_DOCS: This needs to be the same name of the squiggly string in the path.
         - name: customerId
           in: path
           description: Customer ID
@@ -64,6 +66,7 @@ paths:
       description: Get the list of all **Beers** in the system in paged form
       tags:
         - Beers
+      operationId: listBeersV1
       parameters:
         - $ref: "#/components/parameters/PageNumberParam"
         - $ref: "#/components/parameters/PageSizeParam"
@@ -83,6 +86,7 @@ paths:
       tags:
         - Beers
         - V1 Beers
+      operationId: getBeerByIdV1
       parameters:
         - name: beerId
           in: path
