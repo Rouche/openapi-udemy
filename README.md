@@ -33,3 +33,7 @@ https://swagger.io/docs/specification/callbacks/
 ### Security
 
 https://swagger.io/docs/specification/authentication/
+
+### OpenAPI Generators
+
+https://openapi-generator.tech/
