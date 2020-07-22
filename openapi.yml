@@ -26,6 +26,7 @@ paths:
       tags:
         - Customers
       operationId: listCustomersV1
+      security: [] # ROUCHE_DOCS override security to none
       parameters:
         - $ref: "#/components/parameters/PageNumberParam"
         - $ref: "#/components/parameters/PageSizeParam"
@@ -71,6 +72,7 @@ paths:
       tags:
         - Customers
       operationId: getCustomerByIdV1
+      security: [] # ROUCHE_DOCS override security to none
       parameters:
         # ROUCHE_DOCS: The param name needs to be the same name of the squiggly string
         - $ref: "#/components/parameters/CustomerIdPathParam"
@@ -284,7 +286,21 @@ paths:
         "404":
           description: Not Found
 
+security:
+  - BasicAuth: []
+  - JwtAuthToken: []
+
 components:
+
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    JwtAuthToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
   parameters:
     PageNumberParam:
       name: pagenumber

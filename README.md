@@ -29,3 +29,7 @@ https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#param
 ### Callbacks
 
 https://swagger.io/docs/specification/callbacks/
+
+### Security
+
+https://swagger.io/docs/specification/authentication/
